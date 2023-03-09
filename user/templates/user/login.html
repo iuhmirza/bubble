@@ -5,16 +5,16 @@
         <form method="POST">
             {% csrf_token %}
             <fieldset>
-                <legend class="border-bottom mb-4">Sign up!</legend>
+                <legend class="border-bottom mb-4">Log in!</legend>
                 {{ form|crispy  }}
             </fieldset>
             <div class="form-group">
-                <button class="btn btn-outline-primary" type="submit">Sign up</button>
+                <button class="btn btn-outline-primary" type="submit">Login</button>
             </div>
         </form>
         <div>
             <small class="text-muted">
-                Have an account? <a class="ml-2" href="{% url 'login' %}">Sign in!</a>
+                Need an account? <a class="ml-2" href="{% url 'signup' %}">Sign up!</a>
             </small>
         </div>
     </div>
