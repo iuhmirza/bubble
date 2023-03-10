@@ -4,7 +4,7 @@ from .models import Blog
 
 def index(request):
     context = {
-        'posts': Blog.objects.all()
+        'blogs': Blog.objects.all()
     }
     return render(request, 'blog/index.html', context)
 

@@ -3,11 +3,12 @@
     <h1>Blog!</h1>
     <br>
         <div class="col-md-6">
-            {% for post in posts %}
+            {% for blog in blogs %}
                 <div class="card">
+                    <img src="{{ blog.author.profile.image.url }}" alt="" >
                     <div class="card-body">
-                        <code>{{post.content}}</code>
-                        <p>{{post.author}} - {{post.date}}</p>
+                        <code>{{blog.content}}</code>
+                        <p>{{blog.author}} - {{blog.date}}</p>
                     </div>
                 </div>
                 <br>
