@@ -1,15 +1,14 @@
 {% extends 'blog/base.html' %}
-{% load crispy_forms_tags %}
 {% block content  %}
 <div>
     <form method="POST">
         {% csrf_token %}
         <fieldset>
-            <legend></legend>
-            {{ form|crispy }}
+            <legend>Delete blog?</legend>
         </fieldset>
         <div>
-            <button class="btn btn-outline-info" type="submit">Save</button>
+            <button class="btn btn-outline-danger">Delete</button>
+            <a class="btn btn-outline-secondary" href="{% url 'post-detail' object.id %}">Cancel</a>
         </div>
     </form>
 </div>
