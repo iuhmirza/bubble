@@ -5,11 +5,13 @@
         <div class="col-md-6">
             {% for blog in blogs %}
                 <div class="card">
-                    <img src="{{ blog.author.profile.image.url }}" alt="" >
-                    <div class="card-body">
-                        <code>{{blog.content}}</code>
-                        <p>{{blog.author}} - {{blog.date}}</p>
-                    </div>
+                    <a class="m-0 p-0" href="{% url 'blog-detail' blog.id %}">
+                        <img src="{{ blog.author.profile.image.url }}" alt="" >
+                        <div class="card-body">
+                            <code>{{blog.content}}</code>
+                            <p>{{blog.author}} - {{blog.date}}</p>
+                        </div>
+                    </a>
                 </div>
                 <br>
             {% endfor %}
