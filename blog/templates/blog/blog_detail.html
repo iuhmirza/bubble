@@ -7,6 +7,9 @@
             <code>{{object.content}}</code>
             <p>{{object.author}} - {{object.date}}</p>
         </div>
+        {% if object.author == user %}
+            <a class="btn btn-danger" href="{% url 'blog-delete' object.id %}">Delete</a>
+        {% endif %}
     </div>
     <br>
 </div>
