@@ -1,0 +1,13 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+    <h1> Blogs by {{ views.kwargs.username }}</h1>
+    <div>
+        {% for blog in blogs  %}
+        <div class="card-body">
+            <code>{{blog.content}}</code>
+            <p>{{blog.author}} - {{blog.date}}</p>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock content %}
+
