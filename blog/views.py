@@ -16,6 +16,7 @@ class BlogListView(ListView):
     template_name = 'blog/index.html'
     context_object_name = 'blogs'
     ordering = ['-date']
+    paginate_by = 5
 
 
 class BlogDetailView(DetailView):
