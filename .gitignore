@@ -1,3 +1,6 @@
+#production files
+static/
+
 #dummy data
 dummy_posts.json
 media/
