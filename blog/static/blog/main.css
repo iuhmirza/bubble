@@ -5,10 +5,19 @@
     object-fit: cover;
 }
 
-.date {
-    color: gray;
-}
-
 p {
     margin: 0;
+}
+
+.blog {
+    transition: all .15s ease-in-out;
+    border-radius: 10px
+}
+
+.blog:hover {
+    transform: scale(1.05);
+}
+
+.blog:active {
+    transform: scale(1);
 }

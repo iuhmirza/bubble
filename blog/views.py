@@ -17,13 +17,11 @@ class BlogListView(ListView):
     template_name = 'blog/index.html'
     context_object_name = 'blogs'
     ordering = ['-date']
-    paginate_by = 5
 
 class UserBlogListView(ListView):
     model = Blog
     template_name = 'blog/user_blog.html'
     context_object_name = 'blogs'
-    paginate_by = 5
 
     def get_queryset(self):
         user = get_object_or_404(User, username=self.kwargs.get('username'))
