@@ -4,16 +4,7 @@
     <br>
         <div class="col-md-6">
             {% for blog in blogs %}
-                <div class="card">
-                    <a class="m-0 p-0" href="{% url 'blog-detail' blog.id %}">
-                        <img src="{{ blog.author.profile.image.url }}" alt="" >
-                        <div class="card-body">
-                            <code>{{blog.content}}</code>
-                            <p>{{blog.author}} - {{blog.date}}</p>
-                        </div>
-                    </a>
-                </div>
-                <br>
+                {% include "blog/blog_list.html" with blog=blog %}
             {% endfor %}
             {% if is_paginated %}
                 {% if page_obj.has_previous %}
