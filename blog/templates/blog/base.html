@@ -14,9 +14,9 @@
 </head>
 <body>
 <header>
-    <nav class="navbar navbar-expand-lg bg-primary-subtle">
+    <nav class=" container navbar navbar-expand-lg">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Bubble</a>
+            <a class="navbar-brand" href="/"><img class="profile-picture grow" src="{% static 'new_bubble.png' %}" alt=""></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -46,6 +46,7 @@
                             <a class="nav-link" href="{% url 'signup' %}">Sign up</a>
                         </li>
                     {% endif %}
+                    <!--
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Dropdown
@@ -57,43 +58,53 @@
                             <li><a class="dropdown-item" href="#">Something else here</a></li>
                         </ul>
                     </li>
+                    -->
+                    <!--
                     <li class="nav-item">
                         <a class="nav-link disabled">Disabled</a>
                     </li>
+                    -->
                 </ul>
+                <!--
                 <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-primary" type="submit">Search</button>
                 </form>
+                -->
             </div>
         </div>
     </nav>
 </header>
-<br>
 <main class="container">
     <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-8 d-flex justify-content-center">
             {% if messages %}
                 {% for msg in messages %}
-                    <div class="alert alert-{{msg.tags}}">{{ msg }}</div>
-                {% endfor %}
+                        <div class="alert alert-{{msg.tags}}">{{ msg }}</div>
+                 {% endfor %}
             {% endif %}
             {% block content %}{% endblock %}
         </div>
-        <div class="d-none d-md-block col-md-3 card">
-            <div class="card-body">
-                <h3>sidebar</h3>
-                <p>any information or links goes here</p>
-                <ul class="list-group">
-                    <li class="list-group-item">abc</li>
-                    <li class="list-group-item">def</li>
-                    <li class="list-group-item">ghi</li>
-                    <li class="list-group-item">jkl</li>
-                </ul>
+        <div class="d-none d-md-block col-md-3">
+            <div class="card sticky-top">
+                <div class="card-body">
+                    <h3>sidebar</h3>
+                    <p>any information or links goes here</p>
+                    <ul class="list-group">
+                        <li class="list-group-item">abc</li>
+                        <li class="list-group-item">def</li>
+                        <li class="list-group-item">ghi</li>
+                        <li class="list-group-item">jkl</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
+    
 </main>
+<div class="d-lg-none bg-primary z-2 sticky-bottom position-bottom">
+    def
+</div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 </body>
 </html>

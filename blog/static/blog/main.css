@@ -5,19 +5,39 @@
     object-fit: cover;
 }
 
-p {
-    margin: 0;
+.bubble-img {
+
+}
+
+.blue-celestial {
+    background: hsl(203, 75%, 48%);
+}
+
+.blue-french {
+    background: hsl(203, 100%, 37%);
+}
+
+.grow {
+    transition: all .15s ease-in-out;
 }
 
 .blog {
+    border-radius: 8px;
     transition: all .15s ease-in-out;
-    border-radius: 10px
 }
 
 .blog:hover {
-    transform: scale(1.05);
+    background-color: ghostwhite;
 }
 
 .blog:active {
+    background-color: white;
+}
+
+.grow:hover {
+    transform: scale(1.05);
+}
+
+.grow:active {
     transform: scale(1);
 }

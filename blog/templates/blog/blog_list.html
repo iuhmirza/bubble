@@ -1,9 +1,9 @@
-<a class="d-flex flex-row my-2 p-2 bg-light blog text-reset text-decoration-none" href="{% url 'blog-detail' blog.id %}">
+<a class="d-flex flex-row my-2 p-2 blog text-reset text-decoration-none" href="{% url 'blog-detail' blog.id %}">
     <div class="d-flex flex-column align-items-center justify-content-center me-2">
         <img class="profile-picture" src="{{ blog.author.profile.image.url }}" alt="" >
     </div>
     <div class="fs-6 lh-sm">
-        <p class="fs-6 text-muted">{{blog.author}}</p>
-        <p>{{blog.content}}</p>
+        <span class="text-muted">{{blog.author}}</span>
+        <p class="m-0">{{blog.content}}</p>
     </div>
 </a>
