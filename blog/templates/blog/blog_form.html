@@ -1,7 +1,7 @@
 {% extends 'blog/base.html' %}
 {% load crispy_forms_tags %}
 {% block content  %}
-<div>
+<div class="col-md-8">
     <form method="POST">
         {% csrf_token %}
         <fieldset>
@@ -12,5 +12,8 @@
             <button class="btn btn-outline-info" type="submit">Save</button>
         </div>
     </form>
+    <script>
+        document.getElementById("new-blog").classList.add("active")
+    </script>
 </div>
 {% endblock content  %}

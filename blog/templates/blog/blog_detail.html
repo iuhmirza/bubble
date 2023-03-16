@@ -6,7 +6,7 @@
             <img class="profile-picture" src="{{ object.author.profile.image.url }}" alt="" >
         </div>
         <div class="fs-6 lh-sm ">
-            <span class="fs-5 text-muted">{{object.author}} - {{object.date}}</span>
+            <span class="fs-5 text-muted"><a href="{% url 'user-blogs' blog.author.username %}">{{object.author}}</a> - {{object.date}}</span>
             <p class="m-0 fs-4">{{object.content}}</p>
         </div>
     </div>
@@ -14,5 +14,6 @@
         <a class="btn btn-outline-danger" href="{% url 'blog-delete' object.id %}">Delete</a>
     {% endif %}
 </div>
+
 {% endblock content %}
 
