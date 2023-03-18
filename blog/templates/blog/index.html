@@ -1,6 +1,18 @@
 {% extends "blog/base.html" %}
 {% block content %}
 <div class="col-md-8">
+    <div class="mb-2 border-bottom py-2">
+        <form method="POST" action="{% url 'blog-create'%}">
+            {% csrf_token %}
+            <fieldset>
+                <label class="form-label" for="id_content">Post your thoughts!</label>
+                <input type="text" class="text-input form-control" type="text" maxlength="200" id="id_content" name="content" placeholder="Thoughts go here">
+            </fieldset>
+            <div class="mt-2">
+                <button class="btn btn-outline-info" type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
     {% for blog in blogs %}
          {% include "blog/blog_list.html" with blog=blog %}
     {% endfor %}
