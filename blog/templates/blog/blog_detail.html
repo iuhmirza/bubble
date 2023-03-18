@@ -13,6 +13,7 @@
     {% if object.author == user %}
         <a class="btn btn-outline-danger" href="{% url 'blog-delete' object.id %}">Delete</a>
     {% endif %}
+    {% if user.is_authenticated %}
     <div class="mt-3 mb-2 border-top border-bottom py-2">
         <form method="POST">
             {% csrf_token %}
@@ -25,6 +26,7 @@
             </div>
         </form>
     </div>
+    {% endif %}
     <div>
         {% for response in responses %}
             {% include "blog/blog_list.html" with blog=response %}
